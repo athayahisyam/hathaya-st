@@ -7,7 +7,7 @@ import matplotlib.pylab as plt
 import seaborn as sns
 import statsmodels.api as sm
 
-set.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
 # Load dataset
 
