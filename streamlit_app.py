@@ -13,6 +13,13 @@ st.set_page_config(layout="wide")
 
 df = pd.read_csv("cm_eu.csv")
 
+# Perbaikan dan pembersihan data
+
+df.interpolate(inplace = True)
+df['date'] = df['date'].str.replace('/', '-')
+df['date'] = pd.to_datetime(df['date'], format='%d-%m-%Y')
+df['value'] = pd.to_numeric(df['value'], errors='coerce')
+
 # Judul dan penjelasan aplikasi
 st.title('Analisis Data Karbon Monitor Eropa')
 st.write('Selamat datang di aplikasi analisis data Karbon Monitor Eropa.')
